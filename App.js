@@ -1,6 +1,9 @@
 const express = require('express'); //Nhập (import) module Express và gán nó cho hằng số express.
 const app = express(); //Tải thư viện Express, là một framework ứng dụng web cho Node.js.
 
+const multer =  require('multer'); //sử dụng multer để xử lý file tải lên với Express.js
+const upload = multer({ dest: 'upload/'}); // Cấu hình multer để lưu file tải lên trong thư mục 'upload/'
+
 app.get('/', (req,res) => {
     /* 
         đoạn mã này tạo ra một route trong ứng dụng Express để phản hồi với chuỗi 'Hello Phune23' 
@@ -10,8 +13,11 @@ app.get('/', (req,res) => {
     res.send('Hello Phune23');
 });
 
-app.get('/api/upload', (req, res) => {
-    res.send('Uploand successfully');
+app.get('/api/upload', upload.single('file'), (req, res) => {
+    // upload.single('file') để xử lý việc tải lên một file duy nhất, có tên của trường (field name) trong form mà file sẽ được tải lên.
+    //Khi có yêu cầu đến đường dẫn này, máy chủ sẽ phản hồi với thông điệp 'Uploand successfully'.
+    res.json(req.file); //đoạn mã này lấy thông tin về file đã được tải lên.
+    res.send('Upload successfully');
 });
 
 const port = process.env.PORT || 3000;
