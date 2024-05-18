@@ -10,6 +10,15 @@ npm install express multer
 nodemon App.js
 ```
 
+# ⚙ Picture Demo:
+`Exam about upload localfile`
+
+<img title="Demo Upload local file" alt="Exam Upload local file" src="./Img/Demo/Exam about upload localfile.jpg" style="width:500px;" class="center">
+
+`When send file by postman, the file is upload in folder Uploads`
+
+<img title="Demo Upload local file" alt="Exam Upload local file" src="./Img/Demo/When send file by postman, the file is upload in folder Uploads.jpg" style="width:250px;" class="center">
+
 # 🏷 If you run have error like this:
 ```bash
 nodemon : The term 'nodemon' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling 
