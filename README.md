@@ -13,7 +13,7 @@ nodemon App.js
 # ⚙ Picture Demo:
 `Exam about upload localfile`
 
-<img title="Demo Upload local file" alt="Exam Upload local file" src="./Img/Demo/Exam about upload localfile.jpg" style="width:500px;" class="center">
+<img title="Demo Upload local file" alt="Exam Upload local file" src="./Img/Demo/Exam about upload localfile.jpg" style="width:800px;" class="center">
 
 `When send file by postman, the file is upload in folder Uploads`
 
