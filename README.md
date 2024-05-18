@@ -7,7 +7,7 @@ npm install express multer
 
 # ⚙ Run:
 ```bash
-npm install express multer
+nodemon App.js
 ```
 
 # 🏷 If you run have error like this:
