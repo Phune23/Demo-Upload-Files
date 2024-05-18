@@ -2,7 +2,18 @@ const express = require('express'); //Nhập (import) module Express và gán n�
 const app = express(); //Tải thư viện Express, là một framework ứng dụng web cho Node.js.
 
 const multer =  require('multer'); //sử dụng multer để xử lý file tải lên với Express.js
-const upload = multer({ dest: 'upload/'}); // Cấu hình multer để lưu file tải lên trong thư mục 'upload/'
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+         cb(null, 'uploads/');
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname);
+    },
+});
+
+// const upload = multer({ dest: 'uploads/' });
+ const upload = multer({ storage }); // Cấu hình multer để lưu file tải lên trong thư mục 'upload/'
 
 app.get('/', (req,res) => {
     /* 
